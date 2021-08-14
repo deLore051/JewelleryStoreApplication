@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B364AB77E75E880E455E0F3 /* Pods_Jewllery_Store_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC17069D61962387E990F68 /* Pods_Jewllery_Store_Application.framework */; };
+		7F2A6D1426C29EA200713BC4 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A6D1326C29EA200713BC4 /* APICaller.swift */; };
+		7F2A6D1626C2A33600713BC4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A6D1526C2A33600713BC4 /* Constants.swift */; };
+		7F2A6D1826C2A74C00713BC4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A6D1726C2A74C00713BC4 /* Product.swift */; };
+		7F2A6D1B26C2B59F00713BC4 /* ProductReusableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A6D1A26C2B59F00713BC4 /* ProductReusableCollectionViewCell.swift */; };
+		7F5CAD9226C587B7009042D2 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CAD9126C587B7009042D2 /* DefaultValues.swift */; };
+		7F85116B26C04B5900AAE87B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85116A26C04B5900AAE87B /* AppDelegate.swift */; };
+		7F85116D26C04B5900AAE87B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85116C26C04B5900AAE87B /* SceneDelegate.swift */; };
+		7F85116F26C04B5900AAE87B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85116E26C04B5900AAE87B /* SignInViewController.swift */; };
+		7F85117426C04B5C00AAE87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F85117326C04B5C00AAE87B /* Assets.xcassets */; };
+		7F85117726C04B5C00AAE87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F85117526C04B5C00AAE87B /* LaunchScreen.storyboard */; };
+		7F85118626C04EB100AAE87B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85118526C04EB100AAE87B /* HomeViewController.swift */; };
+		7F85118826C04EC500AAE87B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85118726C04EC500AAE87B /* SearchViewController.swift */; };
+		7F85118A26C04EE400AAE87B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85118926C04EE400AAE87B /* CartViewController.swift */; };
+		7F85118C26C04EF100AAE87B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85118B26C04EF100AAE87B /* ProfileViewController.swift */; };
+		7F85118E26C04F2000AAE87B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85118D26C04F2000AAE87B /* TabBarViewController.swift */; };
+		7F85119026C04F9400AAE87B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85118F26C04F9400AAE87B /* AuthViewController.swift */; };
+		7F85119226C04FE400AAE87B /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85119126C04FE400AAE87B /* ProductViewController.swift */; };
+		7F85119426C0500800AAE87B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85119326C0500800AAE87B /* CategoryViewController.swift */; };
+		7F85119626C0503500AAE87B /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85119526C0503500AAE87B /* OrderViewController.swift */; };
+		7F85119926C05E5E00AAE87B /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85119826C05E5E00AAE87B /* AuthManager.swift */; };
+		7F85119B26C0654800AAE87B /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85119A26C0654800AAE87B /* ErrorManager.swift */; };
+		7F85119D26C0677700AAE87B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F85119C26C0677700AAE87B /* GoogleService-Info.plist */; };
+		7F85119F26C06F6400AAE87B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85119E26C06F6400AAE87B /* Extensions.swift */; };
+		7F91C97326C69DC200A37763 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F91C97226C69DC200A37763 /* ProductManager.swift */; };
+		7F91C97626C7D7C200A37763 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F91C97526C7D7C200A37763 /* CartTableViewCell.swift */; };
+		7FE95F9F26C1684700E9FB98 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95F9E26C1684700E9FB98 /* SignUpViewController.swift */; };
+		7FE95FA126C16AFC00E9FB98 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95FA026C16AFC00E9FB98 /* SettingsViewController.swift */; };
+		7FE95FA326C1A3DF00E9FB98 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95FA226C1A3DF00E9FB98 /* UserInfo.swift */; };
+		7FE95FA526C1CCAD00E9FB98 /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE95FA426C1CCAD00E9FB98 /* SectionHeaderCollectionReusableView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		087E1499A1E4F831BB47BC49 /* Pods-Jewllery Store Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jewllery Store Application.debug.xcconfig"; path = "Target Support Files/Pods-Jewllery Store Application/Pods-Jewllery Store Application.debug.xcconfig"; sourceTree = "<group>"; };
+		4381CA16753D6E4D95E6674E /* Pods-Jewllery Store Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jewllery Store Application.release.xcconfig"; path = "Target Support Files/Pods-Jewllery Store Application/Pods-Jewllery Store Application.release.xcconfig"; sourceTree = "<group>"; };
+		7F2A6D1326C29EA200713BC4 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		7F2A6D1526C2A33600713BC4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F2A6D1726C2A74C00713BC4 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7F2A6D1A26C2B59F00713BC4 /* ProductReusableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReusableCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F5CAD9126C587B7009042D2 /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		7F85116726C04B5900AAE87B /* Jewllery Store Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jewllery Store Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F85116A26C04B5900AAE87B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F85116C26C04B5900AAE87B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7F85116E26C04B5900AAE87B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7F85117326C04B5C00AAE87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F85117626C04B5C00AAE87B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F85117826C04B5C00AAE87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F85118526C04EB100AAE87B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7F85118726C04EC500AAE87B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7F85118926C04EE400AAE87B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		7F85118B26C04EF100AAE87B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7F85118D26C04F2000AAE87B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		7F85118F26C04F9400AAE87B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		7F85119126C04FE400AAE87B /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		7F85119326C0500800AAE87B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		7F85119526C0503500AAE87B /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		7F85119826C05E5E00AAE87B /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7F85119A26C0654800AAE87B /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		7F85119C26C0677700AAE87B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F85119E26C06F6400AAE87B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7F91C97226C69DC200A37763 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		7F91C97526C7D7C200A37763 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		7FE95F9E26C1684700E9FB98 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7FE95FA026C16AFC00E9FB98 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7FE95FA226C1A3DF00E9FB98 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		7FE95FA426C1CCAD00E9FB98 /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		EFC17069D61962387E990F68 /* Pods_Jewllery_Store_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jewllery_Store_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F85116426C04B5900AAE87B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B364AB77E75E880E455E0F3 /* Pods_Jewllery_Store_Application.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ABD89F5B9DBA26474EBB64C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFC17069D61962387E990F68 /* Pods_Jewllery_Store_Application.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F2A6D1926C2B56800713BC4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95FA426C1CCAD00E9FB98 /* SectionHeaderCollectionReusableView.swift */,
+				7F2A6D1A26C2B59F00713BC4 /* ProductReusableCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7F85115E26C04B5900AAE87B = {
+			isa = PBXGroup;
+			children = (
+				7F85116926C04B5900AAE87B /* Jewllery Store Application */,
+				7F85116826C04B5900AAE87B /* Products */,
+				A1EAFA2873A77CE9C62B2D4D /* Pods */,
+				3ABD89F5B9DBA26474EBB64C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7F85116826C04B5900AAE87B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F85116726C04B5900AAE87B /* Jewllery Store Application.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F85116926C04B5900AAE87B /* Jewllery Store Application */ = {
+			isa = PBXGroup;
+			children = (
+				7F85118226C04BAA00AAE87B /* Resources */,
+				7F85119726C05E4D00AAE87B /* Managers */,
+				7F85118026C04B9600AAE87B /* Model */,
+				7F85118126C04BA300AAE87B /* ViewModel */,
+				7F85117F26C04B9000AAE87B /* View */,
+				7F85117E26C04B8300AAE87B /* Controller */,
+				7F85117826C04B5C00AAE87B /* Info.plist */,
+				7F85119C26C0677700AAE87B /* GoogleService-Info.plist */,
+			);
+			path = "Jewllery Store Application";
+			sourceTree = "<group>";
+		};
+		7F85117E26C04B8300AAE87B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7F85118326C04E5600AAE87B /* Core */,
+				7F85118426C04E6100AAE87B /* General */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7F85117F26C04B9000AAE87B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F91C97426C7D79100A37763 /* Cart */,
+				7F2A6D1926C2B56800713BC4 /* Home */,
+				7F85117526C04B5C00AAE87B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F85118026C04B9600AAE87B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95FA226C1A3DF00E9FB98 /* UserInfo.swift */,
+				7F2A6D1726C2A74C00713BC4 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F85118126C04BA300AAE87B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F85118226C04BAA00AAE87B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F85117326C04B5C00AAE87B /* Assets.xcassets */,
+				7F85116A26C04B5900AAE87B /* AppDelegate.swift */,
+				7F85119E26C06F6400AAE87B /* Extensions.swift */,
+				7F85116C26C04B5900AAE87B /* SceneDelegate.swift */,
+				7F2A6D1526C2A33600713BC4 /* Constants.swift */,
+				7F5CAD9126C587B7009042D2 /* DefaultValues.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7F85118326C04E5600AAE87B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F85118926C04EE400AAE87B /* CartViewController.swift */,
+				7F85118526C04EB100AAE87B /* HomeViewController.swift */,
+				7F85118B26C04EF100AAE87B /* ProfileViewController.swift */,
+				7F85118726C04EC500AAE87B /* SearchViewController.swift */,
+				7F85118D26C04F2000AAE87B /* TabBarViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7F85118426C04E6100AAE87B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				7FE95F9E26C1684700E9FB98 /* SignUpViewController.swift */,
+				7F85118F26C04F9400AAE87B /* AuthViewController.swift */,
+				7F85119326C0500800AAE87B /* CategoryViewController.swift */,
+				7F85119526C0503500AAE87B /* OrderViewController.swift */,
+				7F85119126C04FE400AAE87B /* ProductViewController.swift */,
+				7F85116E26C04B5900AAE87B /* SignInViewController.swift */,
+				7FE95FA026C16AFC00E9FB98 /* SettingsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		7F85119726C05E4D00AAE87B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7F85119826C05E5E00AAE87B /* AuthManager.swift */,
+				7F85119A26C0654800AAE87B /* ErrorManager.swift */,
+				7F2A6D1326C29EA200713BC4 /* APICaller.swift */,
+				7F91C97226C69DC200A37763 /* ProductManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7F91C97426C7D79100A37763 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				7F91C97526C7D7C200A37763 /* CartTableViewCell.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		A1EAFA2873A77CE9C62B2D4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				087E1499A1E4F831BB47BC49 /* Pods-Jewllery Store Application.debug.xcconfig */,
+				4381CA16753D6E4D95E6674E /* Pods-Jewllery Store Application.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F85116626C04B5900AAE87B /* Jewllery Store Application */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F85117B26C04B5C00AAE87B /* Build configuration list for PBXNativeTarget "Jewllery Store Application" */;
+			buildPhases = (
+				D1A93B7C54820CF07B24B65C /* [CP] Check Pods Manifest.lock */,
+				7F85116326C04B5900AAE87B /* Sources */,
+				7F85116426C04B5900AAE87B /* Frameworks */,
+				7F85116526C04B5900AAE87B /* Resources */,
+				29F8D654ECC39A9997418EDA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jewllery Store Application";
+			productName = "Jewllery Store Application";
+			productReference = 7F85116726C04B5900AAE87B /* Jewllery Store Application.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F85115F26C04B5900AAE87B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					7F85116626C04B5900AAE87B = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 7F85116226C04B5900AAE87B /* Build configuration list for PBXProject "Jewllery Store Application" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F85115E26C04B5900AAE87B;
+			productRefGroup = 7F85116826C04B5900AAE87B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F85116626C04B5900AAE87B /* Jewllery Store Application */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F85116526C04B5900AAE87B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F85117726C04B5C00AAE87B /* LaunchScreen.storyboard in Resources */,
+				7F85117426C04B5C00AAE87B /* Assets.xcassets in Resources */,
+				7F85119D26C0677700AAE87B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29F8D654ECC39A9997418EDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jewllery Store Application/Pods-Jewllery Store Application-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jewllery Store Application/Pods-Jewllery Store Application-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jewllery Store Application/Pods-Jewllery Store Application-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1A93B7C54820CF07B24B65C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jewllery Store Application-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F85116326C04B5900AAE87B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5CAD9226C587B7009042D2 /* DefaultValues.swift in Sources */,
+				7F91C97326C69DC200A37763 /* ProductManager.swift in Sources */,
+				7F85118E26C04F2000AAE87B /* TabBarViewController.swift in Sources */,
+				7F85118826C04EC500AAE87B /* SearchViewController.swift in Sources */,
+				7F85119B26C0654800AAE87B /* ErrorManager.swift in Sources */,
+				7F2A6D1426C29EA200713BC4 /* APICaller.swift in Sources */,
+				7F85116F26C04B5900AAE87B /* SignInViewController.swift in Sources */,
+				7F2A6D1826C2A74C00713BC4 /* Product.swift in Sources */,
+				7F85119926C05E5E00AAE87B /* AuthManager.swift in Sources */,
+				7F91C97626C7D7C200A37763 /* CartTableViewCell.swift in Sources */,
+				7F85116B26C04B5900AAE87B /* AppDelegate.swift in Sources */,
+				7F85116D26C04B5900AAE87B /* SceneDelegate.swift in Sources */,
+				7F85118C26C04EF100AAE87B /* ProfileViewController.swift in Sources */,
+				7FE95FA526C1CCAD00E9FB98 /* SectionHeaderCollectionReusableView.swift in Sources */,
+				7F85118A26C04EE400AAE87B /* CartViewController.swift in Sources */,
+				7F2A6D1626C2A33600713BC4 /* Constants.swift in Sources */,
+				7F85119026C04F9400AAE87B /* AuthViewController.swift in Sources */,
+				7FE95F9F26C1684700E9FB98 /* SignUpViewController.swift in Sources */,
+				7F85119F26C06F6400AAE87B /* Extensions.swift in Sources */,
+				7FE95FA126C16AFC00E9FB98 /* SettingsViewController.swift in Sources */,
+				7F2A6D1B26C2B59F00713BC4 /* ProductReusableCollectionViewCell.swift in Sources */,
+				7F85119226C04FE400AAE87B /* ProductViewController.swift in Sources */,
+				7F85119426C0500800AAE87B /* CategoryViewController.swift in Sources */,
+				7F85118626C04EB100AAE87B /* HomeViewController.swift in Sources */,
+				7FE95FA326C1A3DF00E9FB98 /* UserInfo.swift in Sources */,
+				7F85119626C0503500AAE87B /* OrderViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7F85117526C04B5C00AAE87B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F85117626C04B5C00AAE87B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F85117926C04B5C00AAE87B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F85117A26C04B5C00AAE87B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F85117C26C04B5C00AAE87B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087E1499A1E4F831BB47BC49 /* Pods-Jewllery Store Application.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jewllery Store Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefandojcinovic.Jewllery-Store-Application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F85117D26C04B5C00AAE87B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4381CA16753D6E4D95E6674E /* Pods-Jewllery Store Application.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Jewllery Store Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefandojcinovic.Jewllery-Store-Application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F85116226C04B5900AAE87B /* Build configuration list for PBXProject "Jewllery Store Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F85117926C04B5C00AAE87B /* Debug */,
+				7F85117A26C04B5C00AAE87B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F85117B26C04B5C00AAE87B /* Build configuration list for PBXNativeTarget "Jewllery Store Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F85117C26C04B5C00AAE87B /* Debug */,
+				7F85117D26C04B5C00AAE87B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F85115F26C04B5900AAE87B /* Project object */;
+}
