@@ -19,7 +19,7 @@ final class ProductReusableCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.textAlignment = .center
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
-        label.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        label.textColor = .white
         label.clipsToBounds = true
         return label
     }()

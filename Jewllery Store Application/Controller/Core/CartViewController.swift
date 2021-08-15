@@ -13,7 +13,7 @@ class CartViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        tableView.backgroundColor = .systemBackground
         tableView.register(CartTableViewCell.self, forCellReuseIdentifier: CartTableViewCell.identifier)
         tableView.layer.borderWidth = 2
         tableView.layer.borderColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
@@ -23,7 +23,7 @@ class CartViewController: UIViewController {
     
     private let totalLabel: UILabel = {
         let label = UILabel()
-        label.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        label.textColor = .white
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         label.clipsToBounds = true
         label.font = .systemFont(ofSize: 22, weight: .semibold)
@@ -33,7 +33,7 @@ class CartViewController: UIViewController {
     private let clearButton: UIButton = {
         let button = UIButton()
         button.setTitle("Clear", for: .normal)
-        button.titleLabel?.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        button.titleLabel?.textColor = .white
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         button.backgroundColor = .systemRed
         button.clipsToBounds = true
@@ -43,7 +43,7 @@ class CartViewController: UIViewController {
     private let orderButton: UIButton = {
         let button = UIButton()
         button.setTitle("Order", for: .normal)
-        button.titleLabel?.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        button.titleLabel?.textColor = .white
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         button.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         button.clipsToBounds = true
@@ -155,6 +155,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let model = productsInCart[indexPath.row]
+        let vc = ProductViewController(with: model)
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

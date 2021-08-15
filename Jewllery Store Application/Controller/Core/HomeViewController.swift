@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
                 sectionProvider: { sectionIndex, _ -> NSCollectionLayoutSection? in
                     return HomeViewController.createSectionLayout(section: sectionIndex)
             }) )
-        collectionView.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(ProductReusableCollectionViewCell.self,
                                 forCellWithReuseIdentifier: ProductReusableCollectionViewCell.identifier)
         collectionView.register(SectionHeaderCollectionReusableView.self,

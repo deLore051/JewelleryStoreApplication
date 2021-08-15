@@ -11,7 +11,7 @@ class SignUpViewController: UIViewController {
     
     private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        view.backgroundColor = .systemBackground
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -165,7 +165,7 @@ class SignUpViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Register", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 26, weight: .semibold)
-        button.setTitleColor(#colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1), for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         button.clipsToBounds = true
         return button

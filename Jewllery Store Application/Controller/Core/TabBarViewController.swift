@@ -28,10 +28,10 @@ class TabBarViewController: UITabBarController {
         vc3.navigationItem.largeTitleDisplayMode = .never
         vc4.navigationItem.largeTitleDisplayMode = .never
         
-        vc1.view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
-        vc2.view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
-        vc3.view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
-        vc4.view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        vc1.view.backgroundColor = .systemBackground
+        vc2.view.backgroundColor = .systemBackground
+        vc3.view.backgroundColor = .systemBackground
+        vc4.view.backgroundColor = .systemBackground
         
         let nav1 = UINavigationController(rootViewController: vc1)
         let nav2 = UINavigationController(rootViewController: vc2)

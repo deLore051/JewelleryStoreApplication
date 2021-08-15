@@ -53,7 +53,7 @@ class CartTableViewCell: UITableViewCell {
     public let deleteProductButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "trash"), for: .normal)
-        button.tintColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        button.tintColor = .white
         button.backgroundColor = .systemRed
         button.clipsToBounds = true
         return button
@@ -61,7 +61,7 @@ class CartTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        contentView.backgroundColor = .systemBackground
         addSubview(productImageView)
         addSubview(productNameLabel)
         addSubview(productIDLabel)

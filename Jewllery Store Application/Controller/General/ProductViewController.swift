@@ -20,7 +20,7 @@ class ProductViewController: UIViewController {
     
     private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        view.backgroundColor = .systemBackground
         return view
     }()
 
@@ -30,7 +30,7 @@ class ProductViewController: UIViewController {
         label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         label.textAlignment = .center
-        label.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        label.textColor = .white
         label.clipsToBounds = true
         return label
     }()
@@ -49,7 +49,7 @@ class ProductViewController: UIViewController {
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
-        label.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        label.textColor = .white
         label.clipsToBounds = true
         return label
     }()
@@ -59,7 +59,7 @@ class ProductViewController: UIViewController {
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
-        label.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        label.textColor = .white
         label.clipsToBounds = true
         return label
     }()
@@ -69,7 +69,7 @@ class ProductViewController: UIViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
-        label.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        label.textColor = .white
         label.clipsToBounds = true
         return label
     }()
@@ -78,7 +78,7 @@ class ProductViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Add to Cart", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 26, weight: .semibold)
-        button.titleLabel?.textColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        button.titleLabel?.textColor = .white
         button.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         button.clipsToBounds = true
         return button
@@ -95,7 +95,7 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 1, green: 0.9929656386, blue: 0.9469751716, alpha: 1)
+        view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         addSubviewToContentView()
@@ -134,7 +134,7 @@ class ProductViewController: UIViewController {
         let labelHeight: CGFloat = 40
         let imageSize: CGFloat = view.width - 20
         let buttonWidth: CGFloat = view.width - 20
-        let buttonHeight: CGFloat = 60
+        let buttonHeight: CGFloat = 50
         
         productNameLabel.frame = CGRect(x: 5,
                                         y: contentView.safeAreaInsets.top + 10,
@@ -180,7 +180,7 @@ class ProductViewController: UIViewController {
         
     }
     
-    public func configure(with model: Product) {
+    private func configure(with model: Product) {
         self.product = model
         self.productNameLabel.text = model.productName
         self.productImageView.sd_setImage(with: URL(string: model.productImageURL), completed: nil)
