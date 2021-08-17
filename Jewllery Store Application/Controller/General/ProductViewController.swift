@@ -27,7 +27,7 @@ class ProductViewController: UIViewController {
     private let productNameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.font = .systemFont(ofSize: 24, weight: .semibold)
         label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         label.textAlignment = .center
         label.textColor = .white
@@ -41,6 +41,7 @@ class ProductViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.borderWidth = 2
         imageView.layer.borderColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
+        imageView.backgroundColor = .white
         return imageView
     }()
     
@@ -99,8 +100,19 @@ class ProductViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         addSubviewToContentView()
-        
         addToCartButton.addTarget(self, action: #selector(didTapAddToCart), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"),
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(didTapSettingsButton))
+    }
+    
+    @objc public func didTapSettingsButton() {
+        let vc = SettingsViewController()
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.modalPresentationStyle = .fullScreen
+        vc.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func addSubviewToContentView() {
@@ -115,9 +127,7 @@ class ProductViewController: UIViewController {
     @objc private func didTapAddToCart() {
         addToCartButton.changeAlphaWhenTapped(sender: addToCartButton)
         guard product != nil, let product = product else { return }
-        ProductManager.shared.addProductToCart(product: product)
-        
-        
+        ProductManager.shared.addProductToCart(model: product)
     }
     
     override func viewDidLayoutSubviews() {

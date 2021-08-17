@@ -8,14 +8,6 @@
 import Foundation
 import Firebase
 
-enum Category: String {
-    case bracelets = "bracelets"
-    case earrings = "earrings"
-    case necklaces = "necklaces"
-    case rings = "rings"
-    case watches = "watches"
-}
-
 final class APICaller {
     
     static let shared = APICaller()
@@ -30,7 +22,7 @@ final class APICaller {
     //MARK: - Product section
     
     /// Obtain snapshot of documents with product data
-    public func obtainProducts(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
+    public func getProductsFromFirestore(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
         db.collection(K.FStore.Products.productCollectionName).order(
             by: K.FStore.Products.productName).getDocuments { querySnapshot, error in
             completion(querySnapshot, error)
@@ -38,7 +30,7 @@ final class APICaller {
     }
     
     /// Create array of product objects from the data that we got in API response
-    public func createProducts(with querySnapshot: QuerySnapshot?) -> [Product] {
+    public func createProductsObjArray(with querySnapshot: QuerySnapshot?) -> [Product] {
         var products: [Product] = []
         guard let snapshotDocuments = querySnapshot?.documents else { return products }
         for document in snapshotDocuments {
@@ -56,6 +48,7 @@ final class APICaller {
                                     productCategory: category,
                                     productDescription: description))
         }
+        self.products = products
         return products
     }
     
@@ -85,7 +78,7 @@ final class APICaller {
     }
     
     /// Get UserInfo of the currently signed in user from firestore
-    public func getUserInfoFromFireStore(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
+    public func getUserInfoFromFirestore(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
         guard let email = Auth.auth().currentUser?.email else { return }
         db.collection(K.FStore.User.userInfoCollectionName)
             .whereField(K.FStore.User.email, isEqualTo: email)
@@ -112,6 +105,29 @@ final class APICaller {
                                 email: email)
         }
         return userInfo
+    }
+    
+    //MARK: - Category Section
+    
+    public func getCategoriesFromFirestore(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
+        db.collection(K.FStore.Category.categoryCollectionName).order(
+            by: K.FStore.Category.categoryName).getDocuments { querySnapshot, error in
+            completion(querySnapshot, error)
+        }
+    }
+    
+    public func createCategoryObjArray(with querySnapshot: QuerySnapshot?) -> [Category] {
+        var categories: [Category] = []
+        guard let snapshotDocuments = querySnapshot?.documents else { return categories }
+        for document in snapshotDocuments {
+            let data = document.data()
+            guard let name = data[K.FStore.Category.categoryName] as? String,
+                  let imageURL = data[K.FStore.Category.categoryImage] as? String else { return categories }
+            categories.append(Category(categoryName: name,
+                                       categoryImageURL: imageURL))
+        }
+        
+        return categories
     }
 }
 

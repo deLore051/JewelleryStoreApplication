@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.clipsToBounds = true
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
         return scrollView
     }()
@@ -95,15 +96,15 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func didTapSettingsButton() {
-        let navVC = UINavigationController(rootViewController: SettingsViewController())
-        navVC.navigationItem.largeTitleDisplayMode = .always
-        navVC.modalPresentationStyle = .fullScreen
-        navVC.navigationBar.tintColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
-        self.present(navVC, animated: true, completion: nil)
+        let vc = SettingsViewController()
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.modalPresentationStyle = .fullScreen
+        vc.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func getProfileData() {
-        APICaller.shared.getUserInfoFromFireStore { [weak self] querySnapshot, error in
+        APICaller.shared.getUserInfoFromFirestore { [weak self] querySnapshot, error in
             guard let self = self else { return }
             guard querySnapshot != nil, error == nil else {
                 self.present(ErrorManager.errorAlert(error!), animated: true, completion: nil)

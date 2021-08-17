@@ -16,22 +16,12 @@ class SettingsViewController: UIViewController {
         return tableView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",
-                                                           style: .done,
-                                                           target: self,
-                                                           action: #selector(didTapBackButton))
-    }
-    
-    @objc private func didTapBackButton() {
-        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,9 +29,9 @@ class SettingsViewController: UIViewController {
         
         tableView.frame = view.bounds
     }
-    
 }
 
+//MARK: - UITableViewDataSource_Delegate
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     

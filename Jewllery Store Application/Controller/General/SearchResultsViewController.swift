@@ -1,31 +1,24 @@
 //
-//  CategoryViewController.swift
+//  SearchResultsViewController.swift
 //  Jewllery Store Application
 //
-//  Created by Stefan Dojcinovic on 8.8.21..
+//  Created by Stefan Dojcinovic on 17.8.21..
 //
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class SearchResultsViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(ReusableTableViewCell.self,
-                           forCellReuseIdentifier: ReusableTableViewCell.identifier)
+        tableView.register(
+            ReusableTableViewCell.self,
+            forCellReuseIdentifier: ReusableTableViewCell.identifier)
+        tableView.isHidden = true
         return tableView
     }()
     
-    private var productsInCategory: [Product] = []
-    
-    init(with category: String) {
-        super.init(nibName: nil, bundle: nil)
-        getProducts(for: category)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var searchResults: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +36,7 @@ class CategoryViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-
+    
     @objc public func didTapSettingsButton() {
         let vc = SettingsViewController()
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -52,29 +45,31 @@ class CategoryViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func getProducts(for category: String) {
-        self.productsInCategory = ProductManager.shared.getProducts(for: category)
+    public func configure(with model: [Product]) {
+        self.searchResults = model
+        tableView.isHidden = false
         tableView.reloadData()
     }
+
 }
 
+//MARK: - UITableViewDataSource_Delegate
 
-extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfProducts = productsInCategory.count
-        guard numberOfProducts != 0 else { return 0 }
-        return numberOfProducts
+        guard searchResults.count != 0 else { return 0 }
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.identifier,
                                                  for: indexPath) as! ReusableTableViewCell
-        let model = productsInCategory[indexPath.row]
+        let model = searchResults[indexPath.row]
         cell.configure(with: CartReusableTableViewCellViewModel(product: model, numberOfProducts: 1))
         cell.deleteProductButton.isHidden = true
         cell.stepper.isHidden = true
@@ -82,16 +77,15 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let vc = ProductViewController(with: productsInCategory[indexPath.row])
-        vc.navigationItem.largeTitleDisplayMode = .never
-        vc.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ProductViewController(with: searchResults[indexPath.row])
+        vc.modalPresentationStyle = .fullScreen
+        vc.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

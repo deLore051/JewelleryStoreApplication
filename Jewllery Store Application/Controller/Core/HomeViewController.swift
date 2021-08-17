@@ -59,11 +59,11 @@ class HomeViewController: UIViewController {
     }
     
     @objc public func didTapSettingsButton() {
-        let navVC = UINavigationController(rootViewController: SettingsViewController())
-        navVC.navigationItem.largeTitleDisplayMode = .always
-        navVC.modalPresentationStyle = .fullScreen
-        navVC.navigationBar.tintColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
-        self.present(navVC, animated: true, completion: nil)
+        let vc = SettingsViewController()
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.modalPresentationStyle = .fullScreen
+        vc.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func configureCollectionView() {
@@ -75,13 +75,13 @@ class HomeViewController: UIViewController {
     
     private func getProductsFromFirestore() {
         self.products = []
-        APICaller.shared.obtainProducts { [weak self] querySnapshot, error in
+        APICaller.shared.getProductsFromFirestore { [weak self] querySnapshot, error in
             guard let self = self else { return }
             guard error == nil else {
                 self.present(ErrorManager.errorAlert(error!), animated: true, completion: nil)
                 return
             }
-            self.products = APICaller.shared.createProducts(with: querySnapshot)
+            self.products = APICaller.shared.createProductsObjArray(with: querySnapshot)
             self.createModel()
             self.collectionView.reloadData()
         }

@@ -27,6 +27,12 @@ struct K {
             static let cityName = "city"
             static let email = "email"
         }
+        
+        struct Category {
+            static let categoryCollectionName = "Categories"
+            static let categoryName = "categoryName"
+            static let categoryImage = "categoryImage"
+        }
     }
     
     struct FStorage {

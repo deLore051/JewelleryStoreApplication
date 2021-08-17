@@ -9,12 +9,12 @@ import UIKit
 
 class CartViewController: UIViewController {
     
-    private var productsInCart: [Product] = []
+    private var productsInCart: [CartReusableTableViewCellViewModel] = []
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .systemBackground
-        tableView.register(CartTableViewCell.self, forCellReuseIdentifier: CartTableViewCell.identifier)
+        tableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.identifier)
         tableView.layer.borderWidth = 2
         tableView.layer.borderColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         tableView.clipsToBounds = true
@@ -66,11 +66,24 @@ class CartViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"),
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(didTapSettingsButton))
+    }
+    
+    @objc public func didTapSettingsButton() {
+        let vc = SettingsViewController()
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.modalPresentationStyle = .fullScreen
+        vc.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapClearButton() {
         ProductManager.shared.clearCartTable()
         self.productsInCart = []
+        self.totalLabel.text = "   Total: 0$"
         tableView.reloadData()
     }
     
@@ -140,10 +153,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CartTableViewCell.identifier,
-                                                 for: indexPath) as! CartTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.identifier,
+                                                 for: indexPath) as! ReusableTableViewCell
         cell.deleteProductButton.tag = indexPath.row
         let model = productsInCart[indexPath.row]
+        cell.tag = indexPath.row
         cell.configure(with: model)
         cell.delegate = self
         return cell
@@ -155,7 +169,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = productsInCart[indexPath.row]
+        let model = productsInCart[indexPath.row].product
         let vc = ProductViewController(with: model)
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.modalPresentationStyle = .fullScreen
@@ -164,8 +178,16 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension CartViewController: CartTableViewCellDelegate {
-    func didTapDelete(at cell: CartTableViewCell) {
+extension CartViewController: ReusableTableViewCellDelegate {
+    
+    func didTapStepper(at cell: ReusableTableViewCell) {
+        ProductManager.shared.updateStepperValue(at: cell.tag, value: Int(cell.stepper.value))
+        DispatchQueue.main.async {
+            self.totalLabel.text = "   Total: \(ProductManager.shared.calculateTotal())$"
+        }
+    }
+    
+    func didTapDelete(at cell: ReusableTableViewCell) {
         DispatchQueue.main.async {
             self.getProducts()
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchCollectionViewCell: UICollectionViewCell {
     
@@ -14,7 +15,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     private let categoryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .systemTeal
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -23,6 +24,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 1
         label.textAlignment = .center
         label.textColor = .white
+        label.backgroundColor = #colorLiteral(red: 0.8504856825, green: 0.7429254651, blue: 0, alpha: 1)
         label.font = .systemFont(ofSize: 22, weight: .semibold)
         return label
     }()
@@ -41,15 +43,16 @@ class SearchCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        categoryImageView.frame = CGRect(x: 0,
-                                         y: 0,
-                                         width: contentView.width,
-                                         height: 120)
+        categoryImageView.frame = CGRect(x: 2,
+                                         y: 2,
+                                         width: contentView.width - 4,
+                                         height: 170)
         
+        categoryImageView.layer.cornerRadius = 15
         
         categoryNameLabel.frame = CGRect(x: 0,
-                                         y: categoryImageView.bottom,
-                                         width: contentView.width - 10,
+                                         y: contentView.bottom - 30,
+                                         width: contentView.width,
                                          height: 30)
         
     }
@@ -60,8 +63,9 @@ class SearchCollectionViewCell: UICollectionViewCell {
         categoryNameLabel.text = nil
     }
     
-    public func configure(with name: String) {
-        self.categoryNameLabel.text = name
+    public func configure(with model: Category) {
+        self.categoryNameLabel.text = model.categoryName
+        self.categoryImageView.sd_setImage(with: URL(string: model.categoryImageURL), completed: nil)
     }
     
     
