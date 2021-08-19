@@ -33,6 +33,21 @@ struct K {
             static let categoryName = "categoryName"
             static let categoryImage = "categoryImage"
         }
+        
+        struct AboutUs {
+            static let aboutUsCollectionName = "AboutUs"
+            static let banner = "banner"
+            static let description = "description"
+        }
+        
+        struct ContactUs {
+            static let contactUsCollectionName = "ContactUs"
+            static let email = "email"
+            static let mobile = "mobile"
+            static let phone = "phone"
+            static let address1 = "address1"
+            static let address2 = "address2"
+        }
     }
     
     struct FStorage {

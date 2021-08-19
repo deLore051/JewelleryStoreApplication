@@ -142,27 +142,27 @@ class ProfileViewController: UIViewController {
         
         contentView.frame = scrollView.bounds
         
-        let imageSize: CGFloat = 100
-        let imageYposition: CGFloat = contentView.safeAreaInsets.top + 5
+        let imageSize: CGFloat = 150
+        let imageYposition: CGFloat = contentView.safeAreaInsets.top + 20
         let labelWidth: CGFloat = contentView.width - 20
         let labelHeight: CGFloat = 40
         
-        profileImageView.frame = CGRect(x: 5,
-                                        y: contentView.safeAreaInsets.top + 5,
+        profileImageView.frame = CGRect(x: (contentView.width - imageSize) / 2,
+                                        y: imageYposition,
                                         width: imageSize,
                                         height: imageSize)
         
         profileImageView.layer.cornerRadius = imageSize / 2
         
-        nameLabel.frame = CGRect(x: profileImageView.right + 10,
-                                 y: imageYposition + 30,
-                                 width: contentView.width - 25 - imageSize,
+        nameLabel.frame = CGRect(x: 10,
+                                 y: profileImageView.bottom + 20,
+                                 width: labelWidth,
                                  height: labelHeight)
         
         nameLabel.layer.cornerRadius = labelHeight / 2
         
         countryLabel.frame = CGRect(x: 10,
-                                    y: profileImageView.bottom + 10,
+                                    y: nameLabel.bottom + 10,
                                     width: labelWidth,
                                     height: labelHeight)
         

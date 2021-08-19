@@ -104,7 +104,7 @@ class CartViewController: UIViewController {
         tableView.frame = CGRect(x: 5,
                                  y: view.safeAreaInsets.top + 5,
                                  width: view.width - 10,
-                                 height: 400)
+                                 height: view.height / 1.5 - 30)
         
         tableView.layer.cornerRadius = 10
         

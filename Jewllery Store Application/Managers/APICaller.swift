@@ -129,5 +129,52 @@ final class APICaller {
         
         return categories
     }
+    
+    //MARK: - AboutUs Section
+    
+    public func getAboutUsDataFromFirestore(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
+        db.collection(K.FStore.AboutUs.aboutUsCollectionName).getDocuments { querSnapshot, error in
+            completion(querSnapshot, error)
+        }
+    }
+    
+    public func createAboutUsObj(with querySnapshot: QuerySnapshot?) -> AboutUsCollectionViewCellViewModel? {
+        var model: AboutUsCollectionViewCellViewModel?
+        guard let snapshotDocuments = querySnapshot?.documents else { return nil }
+        for document in snapshotDocuments {
+            let data = document.data()
+            guard let bannerURL = data[K.FStore.AboutUs.banner] as? String,
+                  let description = data[K.FStore.AboutUs.description] as? String else { return nil }
+            model = AboutUsCollectionViewCellViewModel(imageURL: bannerURL, description: description)
+        }
+        return model
+    }
+    
+    //MARK: - ContactUs Section
+    
+    public func getConactDataFromFirestore(completion: @escaping (QuerySnapshot?, Error?) -> Void) {
+        db.collection(K.FStore.ContactUs.contactUsCollectionName).getDocuments { querSnapshot, error in
+            completion(querSnapshot, error)
+        }
+    }
+    
+    public func createContactUsObj(with querySnapshot: QuerySnapshot?) -> ContactUsCollectionViewCellViewModel? {
+        var model: ContactUsCollectionViewCellViewModel?
+        guard let snapshotDocuments = querySnapshot?.documents else { return nil }
+        for document in snapshotDocuments {
+            let data = document.data()
+            guard let email = data[K.FStore.ContactUs.email] as? String,
+                  let mobile = data[K.FStore.ContactUs.mobile] as? String,
+                  let phone = data[K.FStore.ContactUs.phone] as? String,
+                  let address1 = data[K.FStore.ContactUs.address1] as? String,
+                  let address2 = data[K.FStore.ContactUs.address2] as? String else { return nil }
+            model = ContactUsCollectionViewCellViewModel(email: email,
+                                                         mobilePhone: mobile,
+                                                         phone: phone,
+                                                         address1: address1,
+                                                         address2: address2)
+        }
+        return model
+    }
 }
 
